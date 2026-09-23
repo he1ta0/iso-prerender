@@ -20,6 +20,10 @@
 
 ## 跑起来
 
+**在线版：<https://he1ta0.github.io/iso-prerender/>** —— 点开即玩，不用装任何东西。
+
+想在本地跑：
+
 ```bash
 git clone https://github.com/he1ta0/iso-prerender.git
 cd iso-prerender

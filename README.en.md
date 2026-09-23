@@ -26,6 +26,10 @@ is a hardware depth test instead of a sort order.
 
 ## Run it
 
+**Live: <https://he1ta0.github.io/iso-prerender/>** — nothing to install.
+
+Or locally:
+
 ```bash
 git clone https://github.com/he1ta0/iso-prerender.git
 cd iso-prerender
