@@ -2,7 +2,7 @@
   "name": "iso-prerender",
   "version": "0.1.0",
   "private": true,
-  "description": "A pre-rendering pipeline for 2:1 isometric games, plus Homestead 98 — a complete farm sim built with it. Bakes sprites offline into four AOV atlases (albedo/normal/material/stamp) and lights them in real time on the GPU; per-pixel depth is derived from the projection rather than baked, so occlusion is a hardware depth test. Zero runtime dependencies.",
+  "description": "An offline pre-rendering pipeline and toolchain for 2:1 isometric sprites: bake the art and its atlases offline, light the scene at runtime. A farming scene is included as a rendering slice. Zero runtime dependencies.",
   "type": "module",
   "scripts": {
     "build": "node tools/build-assets.mjs",
