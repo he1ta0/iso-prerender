@@ -31,7 +31,7 @@ through.
 ## Try it
 
 ```bash
-npm run build     # pre-render both atlases — about 4 seconds, no dependencies
+npm run build     # pre-render both atlases — about 7 seconds, no dependencies
 npm run serve     # static server on http://127.0.0.1:8123
 ```
 
@@ -41,10 +41,11 @@ Or build one self-contained file and just open it:
 npm run single    # -> dist/homestead98.html  (2.99 MB, every module + both atlases inlined)
 ```
 
-Running the game needs nothing but a WebGL2 browser. `build`, `serve` and `single`
-use only Node built-ins, so **`npm run build` works on a fresh clone with no
-`npm install` at all.** Puppeteer is a devDependency for the screenshot and
-end-to-end tools, and nothing else.
+Running the game needs nothing but a WebGL2 browser. `build`, `serve`, `single`
+and `sheet` use only Node built-ins, so **`npm run build` works on a fresh clone
+with no `npm install` at all.** Puppeteer (for the screenshot and end-to-end
+tools) and gifenc (for the timelapse) are the only devDependencies, and neither
+is shipped to the browser.
 
 ## The one-line thesis
 
@@ -114,7 +115,7 @@ docs/img/       The images in this README. Regenerate with `npm run timelapse` /
 ```
 
 ```bash
-npm run build      # pre-render both AOV atlases (~4 s)  ->  assets/
+npm run build      # pre-render both AOV atlases (~7 s)  ->  assets/
 npm run verify     # 22 end-to-end assertions against a live frame
 npm run shot       # headless screenshots across 12 times of day and weathers
 npm run timelapse  # the GIFs above
@@ -1191,7 +1192,7 @@ M0 是**光影垂直切片**：地图编辑与生产经营都还没有，重点�
 ## 12. 开发与验证
 
 ```bash
-node tools/build-assets.mjs                       # 全部重建（约 3 秒）
+node tools/build-assets.mjs                       # 全部重建（约 7 秒）
 node tools/build-assets.mjs --only bld_ --sheet   # 只重建建筑 + 出 QA 接触表
 node tools/shoot.mjs --presets noon,night         # 指定时段
 node tools/shoot.mjs --native                     # 1:1 原生 640×360 像素
@@ -1210,13 +1211,16 @@ node tools/volume-probe.mjs --storey chapel --tint --t 0.32
                                                   # 地板收到的是什么**颜色**（R/B/Y/G/V/#）
 node tools/check-interior.mjs --map                 # 家具图纸体检
 node tools/check-interior.mjs --storey chapel       # 三层各有自己的图纸
-node work/dsh-sprite-diff.mjs work/baseline-m7/assets/int assets/int
+node tools/sprite-diff.mjs work/baseline-m7/assets/int assets/int
                                                   # 图集重打包后，旧精灵是否逐像素不变
-node work/dsh-zoom.mjs shot.png out.png 336 220 84 46 8
+node tools/zoom.mjs shot.png out.png 336 220 84 46 8
                                                   # 整数倍最近邻放大（数格子用，不插值）
-node work/dsh-line.mjs --t 0.33 --debug 15 --row 236 --x0 348 --x1 392
+node tools/line.mjs --t 0.33 --debug 15 --row 236 --x0 348 --x1 392
                                                   # 一行像素：亮度 + 世界坐标 + 该像素上的精灵
-node work/dsh-volinfo.mjs                         # 每个场景实际绑定的体积 vs 图纸声明的体积
+node tools/volinfo.mjs                            # 每个场景实际绑定的体积 vs 图纸声明的体积
+node tools/timelapse.mjs --mode indoor --cutaway hide
+                                                  # 逐时段循环动图（README 顶部那两张）
+node tools/asset-sheet.mjs                        # 带标签的资产表（README 里那张）
 node tools/pick.mjs 300,230                        # 这一像素上到底画了哪些精灵图
 node tools/scan.mjs shot.png row 250 180 470 10    # 打印一行原始像素，找硬边界
 node tools/scan.mjs shot.png rect 240 250 20 12    # 一个矩形的均值
