@@ -31,6 +31,9 @@ through.
 ## Try it
 
 ```bash
+git clone https://github.com/he1ta0/homestead-98.git
+cd homestead-98
+
 npm run build     # pre-render both atlases — about 7 seconds, no dependencies
 npm run serve     # static server on http://127.0.0.1:8123
 ```
