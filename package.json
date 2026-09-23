@@ -1,8 +1,8 @@
 {
-  "name": "homestead-98",
+  "name": "iso-prerender",
   "version": "0.1.0",
   "private": true,
-  "description": "Pre-rendered isometric farming sandbox with a real-time lighting engine. Zero runtime dependencies.",
+  "description": "A pre-rendering pipeline for 2:1 isometric games, and Homestead 98 — a complete farm sim built with it. Zero runtime dependencies.",
   "type": "module",
   "scripts": {
     "build": "node tools/build-assets.mjs",

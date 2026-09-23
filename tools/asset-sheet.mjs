@@ -33,6 +33,8 @@ const WIDTH = Number(getFlag('width', 1200));
 const SCALE = Number(getFlag('scale', 2));       // sprite zoom; the sheets are unreadable at 1x
 const MAX = Number(getFlag('max', 40));          // per-section cap, after de-duplication
 const ONLY = getFlag('set', null);
+// One place to rename the project (same flag as tools/aov-sheet.mjs).
+const TITLE = getFlag('title', 'ISO-PRERENDER');
 
 // The game's own HUD palette (src/ui.js), so a sheet looks like it came from the
 // same place as the thing it documents.
@@ -152,7 +154,7 @@ function build(setKey) {
   const buf = surface(W, H, BG);
 
   // ---- header
-  text(buf, W, H, 'HOMESTEAD 98', PAD, PAD - 4, { scale: 3, color: INK });
+  text(buf, W, H, TITLE, PAD, PAD - 4, { scale: 3, color: INK });
   const [aw, ah] = manifest.atlas.albedo;
   text(buf, W, H, `${cfg.title} / ${Object.keys(manifest.sprites).length} SPRITES / ATLAS ${aw}X${ah} / ${manifest.tile.w}X${manifest.tile.h} TILE`,
     PAD, PAD + 34, { scale: 1, color: DIM });
