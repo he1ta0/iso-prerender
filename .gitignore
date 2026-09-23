@@ -1,0 +1,23 @@
+# The offline QA tools install a browser and a GIF encoder. Neither is used by
+# the game, the build, the server or the single-file bundle.
+node_modules/
+
+# Scratch space. Every screenshot, frame dump, contact sheet, diff and baseline
+# zip the tools write lands here, and all of it is regenerable from src/ +
+# tools/ — none of it is source. `npm run shot`, `npm run verify -- --keep` and
+# friends will recreate whatever they need.
+work/
+
+# Milestone snapshots of the whole tree, kept locally while iterating.
+backup/
+
+# The single-file bundle. `npm run single` writes dist/homestead98.html (2.99 MB,
+# every module and both atlases inlined) — a build product, so it is released
+# rather than committed.
+dist/
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp

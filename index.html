@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HOMESTEAD 98 — pre-rendered isometric farm</title>
+<style>
+  html, body {
+    margin: 0; padding: 0; height: 100%; overflow: hidden;
+    background: #05060a;
+    /* a very slight phosphor tint on the letterbox so the frame feels like a screen */
+    background-image: radial-gradient(ellipse at 50% 45%, #0b0e18 0%, #05060a 70%);
+  }
+  #wrap { position: absolute; }
+  canvas {
+    position: absolute; left: 0; top: 0; display: block;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+  }
+  /* scanline veil over the whole screen — off by default, toggle with class */
+  #wrap.crt::after {
+    content: ''; position: absolute; inset: 0; pointer-events: none;
+    background: repeating-linear-gradient(
+      to bottom,
+      rgba(0,0,0,0.16) 0px, rgba(0,0,0,0.16) 1px,
+      rgba(0,0,0,0.00) 1px, rgba(0,0,0,0.00) 2px);
+    mix-blend-mode: multiply;
+  }
+  #ui { pointer-events: auto; cursor: default; }
+  #boot {
+    position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+    color: #7d90a8; font: 12px/1.6 ui-monospace, Menlo, Consolas, monospace;
+    letter-spacing: 0.14em; text-align: center; white-space: pre;
+  }
+</style>
+</head>
+<body>
+  <div id="wrap">
+    <canvas id="gl"></canvas>
+    <canvas id="ui"></canvas>
+  </div>
+  <div id="boot">LOADING ASSETS…</div>
+  <script type="module">
+    const boot = document.getElementById('boot');
+    window.addEventListener('error', (e) => {
+      boot.style.display = 'flex';
+      boot.style.color = '#d9705a';
+      boot.textContent = 'ERROR\n' + (e.message || e.error || 'unknown');
+    });
+    import('./src/main.js').then(() => { boot.style.display = 'none'; })
+      .catch((err) => {
+        boot.style.color = '#d9705a';
+        boot.textContent = 'BOOT FAILED\n' + (err && err.message ? err.message : err);
+        console.error(err);
+      });
+  </script>
+</body>
+</html>

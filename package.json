@@ -1,0 +1,28 @@
+{
+  "name": "homestead-98",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Pre-rendered isometric farming sandbox with a real-time lighting engine. Zero runtime dependencies.",
+  "type": "module",
+  "scripts": {
+    "build": "node tools/build-assets.mjs",
+    "build:sheet": "node tools/build-assets.mjs --sheet",
+    "serve": "node serve.mjs",
+    "single": "node tools/build-single.mjs",
+    "shot": "node tools/shoot.mjs",
+    "shot:native": "node tools/shoot.mjs --native",
+    "verify": "node tools/verify.mjs",
+    "sheet": "node tools/asset-sheet.mjs",
+    "timelapse": "node tools/timelapse.mjs",
+    "snap": "node tools/snapshot.mjs",
+    "snap:list": "node tools/snapshot.mjs --list"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "comment": "devDependencies are for the offline QA tools only (headless screenshots, the end-to-end test, the timelapse GIF). `build`, `serve` and `single` use nothing but Node built-ins, and nothing in here is shipped to the browser.",
+  "devDependencies": {
+    "gifenc": "^1.0.3",
+    "puppeteer": "^23.11.1"
+  }
+}

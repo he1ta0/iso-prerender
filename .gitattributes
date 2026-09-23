@@ -1,0 +1,12 @@
+# Normalise line endings to LF in the repository, on every platform.
+#
+# This is a Windows-authored project but it runs on Node everywhere, and CRLF
+# churn makes every diff unreadable for anyone on Linux or macOS. The working
+# tree may still be checked out however you like — this only pins what the
+# repository stores.
+* text=auto eol=lf
+
+# Binary. Never normalise, never diff.
+*.png binary
+*.gif binary
+*.zip binary
