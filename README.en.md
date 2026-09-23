@@ -193,7 +193,8 @@ with DeepSeek v4.1 Flash.
 
 ## Licence
 
-MIT — see [LICENSE](LICENSE). Covers the code and the atlases it generates.
+MIT — see [LICENSE](LICENSE). It covers the source and the atlases it generates, so the
+PNGs under `assets/` are yours to use as well.
 
 The full engineering log, in Chinese, with the wrong turns left in:
 **[docs/DEEP-DIVE.md](docs/DEEP-DIVE.md)**.

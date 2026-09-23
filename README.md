@@ -155,6 +155,6 @@ npm run single     # 单个自包含 HTML
 
 ## 许可
 
-MIT，见 [LICENSE](LICENSE)。代码和它生成的图集一并适用。
+MIT，见 [LICENSE](LICENSE)。代码与它生成的图集一并适用，所以 `assets/` 下的那些 PNG 你也可以直接拿去用。
 
 完整的中文工程记录，走错的那几步都留在里面：**[docs/DEEP-DIVE.md](docs/DEEP-DIVE.md)**。
