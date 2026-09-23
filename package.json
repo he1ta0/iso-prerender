@@ -13,6 +13,7 @@
     "shot:native": "node tools/shoot.mjs --native",
     "verify": "node tools/verify.mjs",
     "sheet": "node tools/asset-sheet.mjs",
+    "social": "node tools/social-preview.mjs",
     "timelapse": "node tools/timelapse.mjs",
     "snap": "node tools/snapshot.mjs",
     "snap:list": "node tools/snapshot.mjs --list"
