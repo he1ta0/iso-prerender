@@ -151,7 +151,7 @@ All of it is generated. Regenerate the sheets with `npm run sheet`.
 ## Repository layout
 
 ```
-src/            13 runtime modules — the scene and its lighting runtime.
+src/            13 runtime modules — scene, lighting engine, renderer and UI.
 tools/models/   The models, as code. Buildings, chapel, furniture, crops, characters.
 tools/lib/      Offline renderer, shelf packer, PNG codec, shared tool helpers.
 tools/          Build, bundle, verify, screenshot, probe, timelapse and sheet entry points.
