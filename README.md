@@ -134,6 +134,9 @@ This is not a library, but most of it is not game-specific either.
 
 All of it is generated. Regenerate the sheets with `npm run sheet`.
 
+No external art, and none of it is hand-drawn either: every sprite comes out of `npm run build`
+applied to `tools/models/`, so there is no asset file here that the repository cannot regenerate.
+
 <p align="center">
   <img src="docs/img/asset-sheet-outdoor.png" width="820"
        alt="Every distinct outdoor sprite, by category: buildings, trees, props, crops, villagers, terrain, water.">
@@ -180,19 +183,9 @@ you want one.
 
 ## AI involvement
 
-Built with an AI coding assistant (DeepSeek Harness) under my direction. The architecture, the
-debugging and the technical calls are mine; the assistant wrote much of the code and most of
-the prose, including in `docs/DEEP-DIVE.md`.
-
-Said up front rather than left to be discovered, because the real question is not who typed it
-but whether the claims hold — and those are checkable. `npm run verify` prints what it
-measured, and the build is reproducible so you can diff it. The deep-dive is specific enough
-to be wrong: it documents the silent failure above, a table lamp modelled at the wrong height
-that only broke once the depth buffer took over, and replacing a guessed step size with a
-proof that the step cannot skip a caster.
-
-No external art is used and none is hand-drawn. Every sprite comes out of `npm run build`
-applied to `tools/models/`; there is no asset file here that the repository cannot regenerate.
+I set the architecture, made the technical decisions, directed the work and did the debugging.
+The code and most of the prose, including `docs/DEEP-DIVE.md`, were written by DeepSeek Harness
+with DeepSeek v4.1 Flash.
 
 ## Licence
 

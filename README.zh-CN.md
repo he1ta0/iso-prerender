@@ -105,6 +105,8 @@ gl_FragDepth = clamp((dep + u_depthOrigin) / u_depthRange, 0.0, 1.0);
 
 全部是生成的。用 `npm run sheet` 重新产出下面这些表。
 
+没有使用任何外部美术资源，也没有一张图是手绘的：每个精灵都是 `npm run build` 作用在 `tools/models/` 上的产物，仓库里不存在一件它自己无法重新生成的东西。
+
 <p align="center">
   <img src="docs/img/asset-sheet-outdoor.png" width="820" alt="室外全部不重复精灵，按类别排列：建筑、树木、道具、作物、村民、地形、水域。">
 </p>
@@ -143,11 +145,7 @@ npm run single     # 单个自包含 HTML
 
 ## 关于 AI 参与
 
-本项目在我的主导下使用了 AI 编程助手（DeepSeek Harness）。架构、调试和技术取舍由我负责；助手在我的指导下写了大部分代码，以及包括 `docs/DEEP-DIVE.md` 在内的大部分文字。
-
-我选择在开头就写明，而不是等着被看出来——因为真正值得问的不是谁敲的字，而是这些结论站不站得住，而那是可以验证的：`npm run verify` 会把它量到的东西打出来，构建是可复现的所以你可以对拷。工程记录也具体到可以被证伪：它记录了上面那个静默失效、一盏按错误高度建模的桌灯（它在深度缓冲接管之后才坏掉），以及把「猜一个步长」换成「证明这一步跨不过遮挡物」。
-
-没有使用任何外部美术资源，也没有一张图是手绘的。每个精灵都是 `npm run build` 作用在`tools/models/` 上的产物；仓库里不存在一件它自己无法重新生成的东西。
+架构、技术取舍、方向指导和调试由我负责；代码与文档由 DeepSeek Harness 搭配 DeepSeek v4.1 Flash 完成。
 
 ## 许可
 
