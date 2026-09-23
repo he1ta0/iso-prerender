@@ -173,7 +173,7 @@ const html = `<!doctype html>
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8">
-<title>HOMESTEAD 98 — pre-rendered isometric farm</title>
+<title>iso-prerender — HOMESTEAD 98</title>
 <style>
   html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; background: #05060a;
     background-image: radial-gradient(ellipse at 50% 45%, #0b0e18 0%, #05060a 70%); }
